@@ -131,6 +131,7 @@ mv -v /cgnutools/lib/gcc{,-disabled}
 cat > /cgnutools/bin/${TARGET_TUPLE}.cfg <<EOF
 -L/cgnutools/lib
 -nostdinc++
+-I/cgnutools/include/$TARGET_TUPLE/c++/v1
 -I/cgnutools/include/c++/v1
 -I/llvmtools/include
 EOF
@@ -176,6 +177,7 @@ grep ld.lld:  dummy.log
 grep -B2 -A1 '^ /llvmtools/include' dummy.log
 # It should output in this order:
 # /cgnutools/include/c++/v1
+# /cgnutools/include/x86_64-pc-linux-musl/c++/v1
 # /llvmtools/include
 # /mnt/cmlfs/cgnutools/lib/clang/15.0.6/include
 # NOTE: The libc++ headers should be searched first before any other header directories.
