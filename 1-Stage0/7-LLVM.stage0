@@ -132,6 +132,7 @@ cat > /cgnutools/bin/${TARGET_TUPLE}.cfg <<EOF
 -L/cgnutools/lib
 -nostdinc++
 -I/cgnutools/include/c++/v1
+-I /cgnutools/include/$TARGET_TUPLE/c++/v1/
 -I/llvmtools/include
 EOF
 
